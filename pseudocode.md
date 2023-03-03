@@ -1,8 +1,5 @@
 # To-Do List Pseudocode
 
-## **Questions**
-
-
 ## **Concept**
 - Create an online to-do list manager application
 
@@ -100,9 +97,18 @@
 - CurrentView
 	- String for view (‘active’, ‘all’, ‘completed’)
 
-## **Functions**
+## **Objects/Functions**
 
+**Objects**
+- newItem, setNewItem
+- items, setItems
 
+**Functions**
+- function App()
+- function addItem()
+- function itemComplete()
+- function deleteItem()
+- function clearList()
 
 ## **Procedures**
 
