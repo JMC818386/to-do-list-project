@@ -5,6 +5,7 @@ function App() {
     const [newItem, setNewItem] = useState("");
     const [items, setItems] = useState([]);
     
+/*------------------------------------------------------*/
 
     function addItem() {
 
@@ -23,10 +24,15 @@ function App() {
 
     }
 
+    /*------------------------------------------------------*/
+
     function deleteItem(id) {
-        const newArray = items.filter(item => item.id !=+ id);
+        const newArray = items.filter(x => x.id !=+ id);
         setItems(newArray);
     }
+    //console.log(newItem);
+
+    /*------------------------------------------------------*/
 
     return (
         <div className="App">
@@ -36,6 +42,7 @@ function App() {
             placeholder="Add an item..."
             value={newItem}
             onChange={e => setNewItem(e.target.value)}
+            id="textInput"
             />
 
             <button className="add-button" onClick={() => addItem()}>Add</button>
@@ -43,7 +50,10 @@ function App() {
             <ul>
                 {items.map(item => {
                     return(
-                        <li key={item.id}><button className='delete-button' onClick={() => deleteItem(item.id)}>X</button> {item.value} <button className='delete-button' onClick={() => deleteItem(item.id)}>X</button>
+                        <li key={item.id}>
+                            <input type="checkbox" id="checkBox"></input>
+                            {item.value} 
+                            <button className='delete-button' onClick={() => deleteItem(item.id)}>X</button>
                         </li>
                     )
                 })}
